@@ -44,7 +44,7 @@ KerrGeoOrbit::parametrization = "Parametrization error: `1`"
 
 
 (* ::Section::Closed:: *)
-(*Schwarzschild*)
+(*Schwarzschild/史瓦西*)
 
 
 (* ::Text:: *)
@@ -63,7 +63,7 @@ rSchwarzDarwin[p_,e_/;e<1,\[Chi]_]:=p/(1 + e Cos[\[Chi]])
 
 
 (* ::Text:: *)
-(*Specialization to circular (equatorial) orbits*)
+(*Specialization to circular (equatorial) orbits/圆轨道*)
 
 
 tSchwarzDarwin[p_/;p>6, 0, \[Xi]_] := ((p^2) \[Xi] )/Sqrt[-6+p] 
@@ -72,7 +72,7 @@ rSchwarzDarwin[p_/;p>6, 0, \[Xi]_] := p;
 
 
 (* ::Text:: *)
-(*Specialization to hyperbolic orbits*)
+(*Specialization to hyperbolic orbits/双曲轨道*)
 (*The analytic equations here were derived by O. Long *)
 (*Note: tSchwarzDarwin takes the Re part to avoid a branch cut problem causing the Im part to be non-zero when using arbitrary precision*)
 
@@ -138,7 +138,7 @@ KerrGeoOrbitFunction[0, p, e, 1, assoc]
 
 
 (* ::Subsection::Closed:: *)
-(*Equatorial (Darwin)*)
+(*Equatorial (Darwin)/赤道Darwin*)
 
 
 (* ::Text:: *)
@@ -287,7 +287,7 @@ Module[{test,compare,res,NInit,iter=1,sampledFunc,phaseList,pg,eps,coeffs,
 
 
 (* ::Subsubsection::Closed:: *)
-(*Main file that calculates geodesics using spectral integration*)
+(*Main file that calculates geodesics using spectral integration/频谱积分？*)
 
 
 Clear[KerrGeoOrbitFastSpecDarwin];
@@ -461,7 +461,7 @@ Module[{M=1,consts,En,L,Q,zp,zm,assoc,var,t0, \[Chi]0, \[Phi]0,r0,\[Theta]0,t,r,
 
 
 (* ::Subsection::Closed:: *)
-(*Circular (Mino)*)
+(*Circular (Mino)/圆轨道Mino*)
 
 
 (* ::Text:: *)
@@ -513,7 +513,7 @@ KerrGeoOrbitMino[a_, p_, (0|0.), (1|1.), initPhases:{_,_,_,_}:{0,0,0,0}] := Modu
 
 
 (* ::Subsection::Closed:: *)
-(*Generic (Mino)*)
+(*Generic (Mino)/一般轨道Mino*)
 
 
 KerrGeoOrbitPhases[a_,p_,e_,x_]:=Module[{M=1,consts,En,L,Q,assoc,\[CapitalUpsilon]r,\[CapitalUpsilon]\[Theta],\[CapitalUpsilon]\[Phi],\[CapitalUpsilon]t,r1,r2,r3,r4,zp,zm,kr,k\[Theta],rp,rm,hr,hp,hm,rq,zq,\[Psi]r,tr,\[Phi]f,\[Psi]z,tz,\[Phi]z,t,r,\[Theta],\[Phi],\[Phi]t,\[Phi]r,Ct,C\[Phi],velocity,\[CapitalDelta]tr,\[CapitalDelta]t\[Theta],\[CapitalDelta]\[Phi]r,\[CapitalDelta]\[Phi]\[Theta],type},
@@ -598,7 +598,7 @@ tz[qz_]:= 1/(1-En^2) En zp ( EllipticE[k\[Theta]]2((qz+\[Pi]/2)/\[Pi])-EllipticE
 
 
 (* ::Subsubsection:: *)
-(*Scattering orbit (e > 1)*)
+(*Scattering orbit (e > 1)/散射轨道*)
 
 
 KerrGeoOrbitMino[a_,p_,e_/;Abs@e>1,x_,initPhases:{_,_,_,_}:{0,0,0,0}]:=Module[
@@ -721,7 +721,7 @@ KerrGeoOrbitMino[a_,p_,e_,x_,initPhases:{_,_,_,_}:{0,0,0,0}]:=Module[{M=1,assoc,
 
 
 (* ::Subsection::Closed:: *)
-(*Generic (Fast Spec - Mino)*)
+(*Generic (Fast Spec - Mino)/一般轨道快速谱方法*)
 
 
 (* Hopper, Forseth, Osburn, and Evans, PRD 92 (2015)*)
